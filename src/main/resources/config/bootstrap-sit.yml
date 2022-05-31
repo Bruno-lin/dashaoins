@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 172.16.16.21:30001
+      discovery:
+        namespace: f988084f-2b38-4f69-8e47-129799fc9897
+      config:
+        namespace: f988084f-2b38-4f69-8e47-129799fc9897
+        group: SIT_GROUP
+        extension-configs:
+          - dataId: rocketmq.properties
+            group: SIT_GROUP
+            refresh: true
+          - dataId: common.properties
+            group: SIT_GROUP
+            refresh: true
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    open-in-view: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
