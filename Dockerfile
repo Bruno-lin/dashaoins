@@ -1,5 +1,5 @@
 FROM bellsoft/liberica-openjdk-alpine:11
-ARG jarFile=audit-1.0.0.jar
+ARG jarFile=dashaoins-0.0.1-SNAPSHOT.jar
 ADD target/${jarFile} /app.jar
 ADD target/classes /resources
 ARG active=dev
