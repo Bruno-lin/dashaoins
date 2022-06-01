@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-openjdk-alpine:8
+FROM bellsoft/liberica-openjdk-alpine:11
 ARG JAR_FILE
 ENV APP_ENV local
 ADD target/dashaoins-0.0.1-SNAPSHOT.jar /app.jar
