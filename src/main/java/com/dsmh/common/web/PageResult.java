@@ -1,6 +1,5 @@
 package com.dsmh.common.web;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +14,6 @@ import java.util.List;
  */
 
 public class PageResult<T> extends BaseResult {
-
 
     @Data
     @Builder
@@ -34,29 +32,14 @@ public class PageResult<T> extends BaseResult {
     private final PageData<T> data;
 
 
-    public PageResult(IPage<T> page) {
-        super();
-        PageData<T> pageData = new PageData<>();
-        pageData.setCurrentPage(page.getCurrent());
-        pageData.setTotalPages(page.getPages());
-        pageData.setTotalElements(page.getTotal());
-        pageData.setData(page.getRecords());
-        this.data = pageData;
-
-    }
 
     public PageResult(PageData<T> pageData) {
         super();
         this.data = pageData;
     }
 
-
     public PageData<T> getData() {
         return data;
-    }
-
-    public static <T> PageResult<?> ok(IPage<T> data) {
-        return new PageResult<>(data);
     }
 
     public static ResponseEntity<?> noContent() {
